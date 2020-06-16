@@ -5,6 +5,10 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Post
 from django import forms
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.shortcuts import render
+from paypal.standard.forms import PayPalPaymentsForm
 
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -25,6 +29,22 @@ def home(request):
     }
     return render(request, 'blog/home.html', context)
 
+def DonationView(request):
+
+    
+    paypal_dict = {
+        "Name": "receiver_email@example.com",
+        "Amount": "",
+        "Donation": "name of the item",
+    }
+
+    # Create the instance.
+    form = PayPalPaymentsForm(initial=paypal_dict)
+    context = {"form": form}
+    return render(request, "donate.html", context)
+
+def donate(request):
+    return render(request, 'blog/donate.html')
 
 class PostListView(ListView):
     model = Post
@@ -55,7 +75,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        return super().form_valid(form, self)
+        return super().form_valid(form)
 
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

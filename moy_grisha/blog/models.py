@@ -14,7 +14,7 @@ class Post(models.Model):
 	def __str__(self):
 		return f'{self.title} Post'
 
-	def save(self):
+	def get_absolute_url(self):
 		super().save()
 
 		img = Image.open(self.image.path)
@@ -22,6 +22,4 @@ class Post(models.Model):
 			output_size = (600, 600)
 			img.thumbnail(output_size)
 			img.save(self.image.path)
-
-	def get_absolute_url(self):
 		return reverse('post-detail', kwargs={'pk': self.pk})

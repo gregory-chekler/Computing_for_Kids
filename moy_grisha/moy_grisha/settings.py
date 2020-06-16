@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'paypal.standard.ipn'
 ]
 
 MIDDLEWARE = [
@@ -109,6 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
+
+PAYPAL_TEST = True
 
 USE_I18N = True
 

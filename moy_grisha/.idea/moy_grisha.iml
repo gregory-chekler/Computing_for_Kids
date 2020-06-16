@@ -13,7 +13,26 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.idea" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.idea/dataSources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.idea/inspectionProfiles" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blog" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blog/migrations" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blog/static" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blog/static/blog" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blog/templates" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blog/templates/blog" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/media" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/media/blog_pics" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/media/profile_pics" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/moy_grisha" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/users" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/users/templates/users" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/users/templates" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/users/migrations" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
