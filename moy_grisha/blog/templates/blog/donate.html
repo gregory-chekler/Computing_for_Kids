@@ -5,12 +5,31 @@
 			{%  csrf_token %}
 			<fieldset class="form-group">
                 <h1>Donate</h1>
-                <p>If you would like to help, please donate here:</p>
-                {{ donation.render }}
+                    <p>
+                        Why donate?
+                    </p>
+                <p>
+                    Donations help us fund our projects. We want to reach more students, and we can't do that without
+                    some financial backing. If you cannot donate money, but would like to help in other ways, please
+                    contact us by email.
+                </p>
+                <p>If you would like to help, please donate here:
+                    <br>
+                    <br>
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=gregchekler21%40gmail.com&currency_code=USD&source=url">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="WU8TA3LJJT26W" /><input type="hidden" name="item_name" value="Donating this money will help us grow our mission, and help us fund future endeavors." />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                </form>
+                </a>
+                <br>
+                <br>
+                <p>(If the link does not work, right click the image and open it in a new tab).</p>
             </fieldset>
-			<div class="form-group">
-				<button class="btn btn-outline-info" type="submit">Post</button>
-			</div>
 		</form>
 	</div>
 {% endblock content %}
+

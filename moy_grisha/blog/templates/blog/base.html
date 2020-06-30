@@ -1,4 +1,5 @@
 {% load static %}
+{% load embed_video_tags %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
-
+    <link rel="icon" type="image/png" href="{% static 'blog/../../static/blog/favicon.ico' %}"/>
     {% if title %}
         <title>Computing for Kids - {{ title }}</title>
     {% else %}
@@ -22,7 +23,7 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <img class="rounded-circle article-img" src="/media/cclogo.jpg" alt="Image" height="20" width="20"> 
+          <img class="rounded-circle article-img" src="/media/cclogo.jpg" alt="Image" height="20" width="20">
           <!-- height and width don't do anything-->
           <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Computing for Kids</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +35,7 @@
               <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
               <a class="nav-item nav-link" href="{% url 'blog-donate' %}">Donate</a>
             </div>
+
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
@@ -65,9 +67,6 @@
           <div class="content-section">
             <h3>Information</h3> 
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Events: None yet</li>
-                <li class="list-group-item list-group-item-light">Announcements: None yet</li>
-                <li class="list-group-item list-group-item-light">How to donate: In progress</li>
                 <li class="list-group-item list-group-item-light">Contact us: gregchekler21@gmail.com</li>
               </ul>
           </div>

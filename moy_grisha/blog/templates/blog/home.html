@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load embed_video_tags %}
 {% block content %}
 	{% for post in posts %}
 		<article class="media content-section">
@@ -9,10 +10,16 @@
 		      <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
 		    </div>
 		    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-		    <p class="article-content">{{ post.content }}</p>
+		    <p class="article-content">{{ post.content }}
 		    	<br />
-    			  <img class="img-responsive" src="{{ post.image.url }}">
+              {% if post.image %}
+    			  <img class="img-responsive" src="{{ post.image.url }}" width="55%" height="auto">
+              {% endif %}
   			    <br />
+                <br>
+                        {% video post.video as my_video %}
+                            {% video my_video '30% x 50%' %}
+                        {% endvideo %}
 		  </div>
 		</article>
 	{% endfor %}

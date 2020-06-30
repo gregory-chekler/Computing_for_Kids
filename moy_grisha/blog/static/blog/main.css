@@ -38,6 +38,8 @@ ul {
 
 .article-title {
   color: #444444;
+  max-width: 200px;
+  width: auto;
 }
 
 a.article-title:hover {
@@ -50,8 +52,18 @@ a.article-title:hover {
 }
 
 .article-img {
-  height: 65px;
-  width: 65px;
+  max-height: 65px;
+  max-width: 65px;
+  height: auto;
+  width: auto;
+  margin-right: 16px;
+}
+
+.img-responsive {
+  max-height: 200px;
+  max-width: 200px;
+  height: auto;
+  width: auto;
   margin-right: 16px;
 }
 

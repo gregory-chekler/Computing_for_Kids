@@ -12,5 +12,6 @@ urlpatterns = [
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='blog-about'),
     path('donate/', views.donate, name='blog-donate'),
+    path('thank_you/', views.Thankyou, name='blog-thank_you'),
     url(r'^paypal/', include('paypal.standard.ipn.urls')),
 ]

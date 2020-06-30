@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
-from paypal.standard.forms import PayPalPaymentsForm
 
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -29,22 +28,11 @@ def home(request):
     }
     return render(request, 'blog/home.html', context)
 
-def DonationView(request):
-
-    
-    paypal_dict = {
-        "Name": "receiver_email@example.com",
-        "Amount": "",
-        "Donation": "name of the item",
-    }
-
-    # Create the instance.
-    form = PayPalPaymentsForm(initial=paypal_dict)
-    context = {"form": form}
-    return render(request, "donate.html", context)
-
 def donate(request):
     return render(request, 'blog/donate.html')
+
+def Thankyou(request):
+    return render(request, 'blog/thank_you.html')
 
 class PostListView(ListView):
     model = Post
@@ -71,7 +59,8 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content', 'image']
+    success_url = '/'
+    fields = ['title', 'content', 'image', 'video']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -80,7 +69,8 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content', 'image']
+    success_url = '/'
+    fields = ['title', 'content', 'image', 'video']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
