@@ -1,2 +1,4 @@
 # Computing_for_Kids
-Django  Website
+
+
+This is the code base for the www.computingforkids.net website.
