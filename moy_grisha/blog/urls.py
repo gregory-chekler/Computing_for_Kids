@@ -13,5 +13,6 @@ urlpatterns = [
     path('about/', views.about, name='blog-about'),
     path('donate/', views.donate, name='blog-donate'),
     path('thank_you/', views.Thankyou, name='blog-thank_you'),
+    path('COVID_19/', views.COVID19, name='blog-covid19'),
     url(r'^paypal/', include('paypal.standard.ipn.urls')),
 ]

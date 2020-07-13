@@ -14,18 +14,18 @@
 	      </div>
 	      {% endif %}
 	    </div>
-	    <h2 class="article-title">{{ object.title }}</h2>
-	    <p class="article-content">{{ object.content }}</p>
+	    <h2 class="article-content"> {{ object.title }} </h2>
+	    <p class="article-content"> {{ object.content }}</p>
 	    	{% if post.image %}
     			  <img class="img-responsive" src="{{ post.image.url }}" width="55%" height="auto">
                 {% endif %}
-      <br>
-      <br>
+            <br>
+            <br>
+      {% if post.video %}
           {% video post.video as my_video %}
           {% video my_video '30% x 50%' %}
           {% endvideo %}
+      {%  endif %}
 	  </div>
 	</article>
 {% endblock content %}
-
-<!-- This is where I need to add the pictures function -->
