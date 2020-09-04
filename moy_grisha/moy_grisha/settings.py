@@ -26,7 +26,8 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 #SECRET_KEY = '5g94#(@f7l!tii2r+h_j4pv9!3n64j+x93@1&ma+^)4^j8+)(4'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG_VALUE", False)
+DEBUG = True #os.environ.get("DEBUG_VALUE", False)
+DEBUG_PROPAGATE_EXCEPTIONS = False
 
 ALLOWED_HOSTS = ['computing-for-kids.herokuapp.com']
 
@@ -43,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'paypal.standard.ipn',
     'embed_video',
     'storages',
 ]
@@ -60,6 +60,17 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'moy_grisha.urls'
+
+
+### Doesn't work in development server. Change to False in development if using production
+### Change to True and each time you switch, clear cache
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = False
+# CSRF_COOKIE_SECURE = False
+
+
+
 
 TEMPLATES = [
     {
